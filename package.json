@@ -1,0 +1,35 @@
+{
+  "name": "frontend-styleguide",
+  "version": "1.0.0",
+  "description": "linte frontend styleguide - react components",
+  "scripts": {
+    "test": "bit test",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
+  },
+  "keywords": [
+    "linte",
+    "react",
+    "components",
+    "frontend",
+    "styleguide"
+  ],
+  "author": "linte",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-styleguidist": "^8.0.3",
+    "webpack": "^4.25.0"
+  }
+}

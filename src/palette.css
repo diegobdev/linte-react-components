@@ -1,0 +1,19 @@
+:root {
+  --color_primary_blue: #2196F3;
+  --color_primary_blue_helper: #1F8EE7;
+
+  --color_primary_linte: #EF3A4D;
+  --color_primary_linte_helper: #DB0F22;
+
+  --color_warning_linte: #EC8457;
+  --color_warning_linte_helper: #E47444;
+
+  --color_attention_linte: #EBDA86;
+  --color_attention_linte_helper: #AD9200;
+
+  --color_light_linte: #828282;
+  --color_light_linte_helper: #5B5B5B;
+
+  --color_muted_text: #767676;
+  --color_default_icon: #767676;
+}
