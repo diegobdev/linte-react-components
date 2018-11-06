@@ -1,11 +1,11 @@
 module.exports = {
-  components: './src/components/**/index.js',
-  ignore: ['**/index.test.js'],
+  components: './src/components/**/[A-Z]*.jsx',
+  ignore: ['**/[A-Z]*.test.js'],
   webpackConfig: {
     module: {
       rules: [
         {
-          test: /\.js?$/,
+          test: /\.js|jsx?$/,
           exclude: /node_modules/,
           use: [
             {
