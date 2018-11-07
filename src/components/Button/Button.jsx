@@ -5,19 +5,27 @@ import './Button.less';
 
 /**
  * @name Button
- * @description Button description
+ * @description Button Component description
  */
 
 const Button = (props) => {
-
   const btnClass = classNames('lnt-btn', {
-    // TODO: tratar primary para ficar genérico
-    'lnt-btn-primary': props.primary,
-    'lnt-btn-outline-primary': props.outline
+    [`lnt-btn-${props.type}`]: true,
+    'lnt-btn-outline': props.outline,
+    '.disabled': props.disabled,
   });
 
+  const attrs = {};
+  if (props.disabled) {
+    attrs.disabled = 'disabled';
+  }
   return (
-    <button className={btnClass} onClick={props.onClick} id={props.id}>
+    <button
+      className={btnClass}
+      onClick={props.onClick}
+      id={props.id}
+      {...attrs}
+    >
       {props.text}
     </button>
   );
@@ -28,22 +36,25 @@ const Button = (props) => {
  * General component description in JSDoc format. Markdown is *supported*.
  */
 Button.propTypes = {
-  /** this is label text of button */
+  /** label text of button */
   text: PropTypes.string,
-  /** this set primary color of button */
-  primary: PropTypes.bool,
-  /** this is reference to inverse primary colors of button */
+  /** color of button - can be ['primary', 'default', 'error', 'linte'] */
+  type: PropTypes.string,
+  /** reference to inverse primary colors of button */
   outline: PropTypes.bool,
-  /** this is callback of button click */
+  /** reference to set disabled of button */
+  disabled: PropTypes.bool,
+  /** callback of button click */
   onClick: PropTypes.func,
-  /** this is ID of button */
+  /** ID of button */
   id: PropTypes.string
 }
 
 Button.defaultProps = {
-  text: 'Linte Button',
-  primary: true,
+  text: 'Button',
+  type: 'primary',
   outline: false,
+  disabled: false,
   onClick: null,
   id: null
 }

@@ -1,6 +1,5 @@
-
-React component example:
+simple component - without parameters:
 
 ```js
-<Button text="Linte Button" id="MyButton" primary />
+<Button />
 ```
