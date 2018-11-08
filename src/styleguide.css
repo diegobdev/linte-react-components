@@ -1,0 +1,19 @@
+/* overwriting materialize css rules */
+nav {
+  background-color: transparent;
+  box-shadow: none;
+}
+ul:not(.browser-default) {
+  padding-left: 16px;
+}
+
+*[class*="rsg--preview"][data-preview="Button"] button{
+  margin: 0 3px;
+}
+button[name="rsg-code-editor"]:focus, button[name="rsg-usage"]:focus {
+  background: white;
+}
+
+footer[class*="rsg--footer"] {
+  display:none;
+}

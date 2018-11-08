@@ -1,32 +1,34 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.less';
+import './Button.scss';
 
 /**
  * @name Button
  * @description Button Component description
  */
 
-const Button = (props) => {
-  const btnClass = classNames('lnt-btn', {
-    [`lnt-btn-${props.type}`]: true,
-    'lnt-btn-outline': props.outline,
-    '.disabled': props.disabled,
+const Button = ({ text, type, small, effect, outline, disabled, onClick, id }) => {
+
+  const btnClass = classNames('btn', {
+    [`lnt-btn-${type}`]: true,
+    'btn-small': small,
+    'btn-flat': outline,
+    'waves-effect': effect,
+    'waves-light': effect && !outline,
+    'disabled': disabled,
   });
 
-  const attrs = {};
-  if (props.disabled) {
-    attrs.disabled = 'disabled';
-  }
+  const attrs = (disabled) ? { disabled } : {};
+
   return (
     <button
       className={btnClass}
-      onClick={props.onClick}
-      id={props.id}
+      onClick={onClick}
+      id={id}
       {...attrs}
     >
-      {props.text}
+      {text}
     </button>
   );
 
@@ -38,21 +40,27 @@ const Button = (props) => {
 Button.propTypes = {
   /** label text of button */
   text: PropTypes.string,
-  /** color of button - can be ['primary', 'default', 'error', 'linte'] */
-  type: PropTypes.string,
+  /** color of button */
+  type: PropTypes.oneOf(['primary', 'default', 'error', 'linte']),
+  /** small button */
+  small: PropTypes.bool,
+  /** click ripple animation of button - see [materialize](https://materializecss.com/waves.html) */
+  effect: PropTypes.bool,
   /** reference to inverse primary colors of button */
   outline: PropTypes.bool,
   /** reference to set disabled of button */
   disabled: PropTypes.bool,
   /** callback of button click */
   onClick: PropTypes.func,
-  /** ID of button */
+  /** id attr of button */
   id: PropTypes.string
 }
 
 Button.defaultProps = {
   text: 'Button',
   type: 'primary',
+  small: false,
+  effect: false,
   outline: false,
   disabled: false,
   onClick: null,

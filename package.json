@@ -17,7 +17,9 @@
   "author": "linte",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
+    "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
@@ -28,11 +30,12 @@
     "css-loader": "^1.0.1",
     "jest": "^23.6.0",
     "less": "^3.8.1",
-    "less-loader": "^4.1.0",
+    "node-sass": "^4.10.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-styleguidist": "^8.0.3",
     "react-test-renderer": "^16.6.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.25.0"
   },

@@ -1,0 +1,39 @@
+// import materialize colors and variables
+@import "../../../node_modules/materialize-css/sass/components/color-variables";
+@import "../../../node_modules/materialize-css/sass/components/color-classes";
+
+.btn, .btn:hover {
+  box-shadow: none !important;
+}
+
+.lnt-btn-primary {
+  @extend .blue;
+  &.btn-flat {
+    @extend .white, .blue-text;
+    border: 1px solid;
+  }
+}
+
+.lnt-btn-linte {
+  @extend .red, .lighten-1;
+  &.btn-flat {
+    @extend .white, .red-text, .text-lighten-1;
+    border: 1px solid;
+  }
+}
+
+.lnt-btn-default {
+  @extend .grey, .lighten-2;
+  &.btn-flat {
+    @extend .white, .grey-text, .text-lighten-2;
+    border: 1px solid;
+  }
+}
+
+.lnt-btn-error {
+  @extend .red, .accent-4;
+  &.btn-flat {
+    @extend .white, .red-text, .text-accent-4;
+    border: 1px solid;
+  }
+}
